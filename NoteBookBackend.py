@@ -109,8 +109,9 @@ while True:
         distance, img, [x3, y3, x4, y4, cx, cy] = detector.findDistance(4, 8, img)
         closeness_threshold = 70
 
-        if distance < closeness_threshold:  # 3.1.1. Selection Mode - Thumb and Index close
-            print("Selection")
+        if distance < closeness_threshold:  # 3.1.1. Pointer Mode - Thumb and Index close
+            xp, yp = 0, 0
+            print("Pointer")
             cv2.arrowedLine(img, (x3, y3 - 25), (x4, y4 + 25), (0, 0, 0), 4, 100)
         elif fingers[1] and fingers[2]:  # 4. Selection Mode - Two fingers are up
             xp, yp = 0, 0  # Reset drawing position
