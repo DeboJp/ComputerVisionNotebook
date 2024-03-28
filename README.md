@@ -35,14 +35,14 @@ Just for Fun: Create an overlay and take a screenshot/selfie for fun with friend
 1. Two fingers for Selection
 2. Thumb and Index together for pointer
 3. index finger high(seperate from thumb and middle) to draw freely - switch between indexthumb and index to track more freely.
-4. Hover over any of the above options to clear, erase, choose color, save pictures temp, save temp into pdf.
+4. Hover over any of the above options to clear, erase, choose color, save pictures temp, save temp into pdf (a compilation of all the saved images).
 5. Have FUn!
 
 ## Demo
 - Just sketching (There is a blooper at the end----ooouu!) <br>
 ![V1 (1)](https://github.com/DeboJp/ComputerVisionNotebook/assets/87137515/62a034c1-1e69-41e6-9ded-9b4019134b8e)
 
-- Some more functionality, selections, erase, save, pdf backend, etc.<br>
+- Some more functionality, selections, erase, save, pdf backend (a compilation of all the saved images), etc.<br>
 ![V2 (1)](https://github.com/DeboJp/ComputerVisionNotebook/assets/87137515/a734e019-721d-4a84-8caf-6d72813fb91b)
 
 
