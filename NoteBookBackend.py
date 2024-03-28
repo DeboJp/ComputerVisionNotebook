@@ -110,7 +110,7 @@ while True:
         closeness_threshold = 70
 
         if distance < closeness_threshold:  # 3.1.1. Pointer Mode - Thumb and Index close
-            xp, yp = 0, 0
+            xp, yp = 0, 0a
             print("Pointer")
             cv2.arrowedLine(img, (x3, y3 - 25), (x4, y4 + 25), (0, 0, 0), 4, 100)
         elif fingers[1] and fingers[2]:  # 4. Selection Mode - Two fingers are up
