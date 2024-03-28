@@ -70,22 +70,30 @@ class handDetector():
 
         return self.lmList, bbox
 
+    # def fingersUp(hand, lmList):
     def fingersUp(self):
         fingers = []
-        # Thumb
-        if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:
-            fingers.append(1)
-        else:
-            fingers.append(0)
+        # Hands
+        # if hand == "Right":  # Right hands
+        if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[4]][1]:  # Right hands
+            # Thumb
+            if self.lmList[self.tipIds[0]][1] < self.lmList[self.tipIds[0] - 1][1]:
+                fingers.append(1)
+            else:
+                fingers.append(0)
+        else:  # Left Hand
+            # Thumb
+            if self.lmList[self.tipIds[0]][1] > self.lmList[self.tipIds[0] - 1][1]:  # Left Hand
+                fingers.append(1)
+            else:
+                fingers.append(0)
 
-        # Fingers
+        # 4 Fingers
         for id in range(1, 5):
             if self.lmList[self.tipIds[id]][2] < self.lmList[self.tipIds[id] - 2][2]:
                 fingers.append(1)
             else:
                 fingers.append(0)
-
-            # totalFingers = fingers.count(1)
 
         return fingers
 

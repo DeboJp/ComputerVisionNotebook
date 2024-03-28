@@ -60,6 +60,17 @@ def create_pdf_and_clear_folder(folder="SavedImages"):
         print("No images found in the folder.")
 
 
+folderPath = "Overlay"
+myList = os.listdir(folderPath)
+# print(myList)
+overlayList = []
+for imPath in myList:
+    image = cv2.imread(f'{folderPath}/{imPath}')
+    overlayList.append(image)
+# print(len(overlayList))
+header = overlayList[3]
+
+
 # Drawing settings
 brushThickness = 15
 eraserThickness = 50
@@ -105,24 +116,21 @@ while True:
             xp, yp = 0, 0  # Reset drawing position
             print("Selection Mode")
             if y1 < 125:
-                if 0 < x1 < 150:
+                if 0 < x1 < 250:
                     imgCanvas = np.zeros((720, 1280, 3), np.uint8)
-                elif 250 < x1 < 450:
-                    # header = overlayList[0]
-                    drawColor = (255, 0, 255)
-                elif 550 < x1 < 750:
-                    # header = overlayList[1]
-                    drawColor = (255, 0, 0)
-                elif 800 < x1 < 950:
-                    # header = overlayList[2]
-                    drawColor = (0, 255, 0)
-                elif 1050 < x1 < 1200:
-                    # header = overlayList[3]
+                elif 325 < x1 < 433:
+                    header = overlayList[0]
                     drawColor = (0, 0, 0)
-            if x1 < 300 and y1 > 125:
-                create_pdf_and_clear_folder()
-                print("pdf Made")
-            if x1 > 1100 and y1 > 125:
+                elif 435 < x1 < 563:
+                    header = overlayList[2]
+                    drawColor = (0, 255, 0)
+                elif 565 < x1 < 688:
+                    header = overlayList[1]
+                    drawColor = (255, 0, 0)
+                elif 690 < x1 < 818:
+                    header = overlayList[3]
+                    drawColor = (255, 0, 255)
+            if 860 < x1 < 1030 and y1 < 125:
                 if not screenshot_taken:  # Check if a screenshot has not been taken yet
                     imgGray = cv2.cvtColor(imgCanvas, cv2.COLOR_BGR2GRAY)
                     _, imgInv = cv2.threshold(imgGray, 50, 255, cv2.THRESH_BINARY_INV)
@@ -131,6 +139,9 @@ while True:
                     screenshot_taken = True  # Set the flag to indicate a screenshot has been taken
             else:
                 screenshot_taken = False
+            if 1050 < x1 < 1250 and y1 < 125:
+                create_pdf_and_clear_folder()
+                print("pdf Made")
             cv2.rectangle(img, (x1, y1 - 25), (x2, y2 + 25), drawColor, cv2.FILLED)
         elif fingers[1] and not fingers[2]:  # 5. Drawing Mode - Index finger is up
             cv2.circle(img, (x1, y1), 15, drawColor, cv2.FILLED)
@@ -149,6 +160,7 @@ while True:
     img = cv2.bitwise_or(img, imgCanvas)
 
     # Show the images
+    img[0:100, 0:1280] = header
     cv2.imshow("Image", img)
     # cv2.imshow("Canvas", imgCanvas)
     # cv2.imshow("Inv", imgInv)
