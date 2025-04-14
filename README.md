@@ -1,5 +1,12 @@
 # ComputerVisionNotebook
- 
+
+ ## Demo
+- Just sketching (There is a blooper at the end----ooouu!) <br>
+![V1 (1)](https://github.com/DeboJp/ComputerVisionNotebook/assets/87137515/62a034c1-1e69-41e6-9ded-9b4019134b8e)
+
+- Some more functionality, selections, erase, save, pdf backend (a compilation of all the saved images), etc.<br>
+![V2 (1)](https://github.com/DeboJp/ComputerVisionNotebook/assets/87137515/a734e019-721d-4a84-8caf-6d72813fb91b)
+
 This project leverages computer vision and hand tracking technologies to create an interactive drawing application. Developed with Python, it utilizes OpenCV and MediaPipe for real-time hand tracking, enabling users to draw on their screen with hand gestures. This versatile module can be integrated into various educational, creative, and accessibility-driven applications.
 
 ## Features
@@ -38,12 +45,7 @@ Just for Fun: Create an overlay and take a screenshot/selfie for fun with friend
 4. Hover over any of the above options to clear, erase, choose color, save pictures temp, save temp into pdf (a compilation of all the saved images).
 5. Have FUn!
 
-## Demo
-- Just sketching (There is a blooper at the end----ooouu!) <br>
-![V1 (1)](https://github.com/DeboJp/ComputerVisionNotebook/assets/87137515/62a034c1-1e69-41e6-9ded-9b4019134b8e)
 
-- Some more functionality, selections, erase, save, pdf backend (a compilation of all the saved images), etc.<br>
-![V2 (1)](https://github.com/DeboJp/ComputerVisionNotebook/assets/87137515/a734e019-721d-4a84-8caf-6d72813fb91b)
 
 
 
